@@ -1,0 +1,83 @@
+.btn-submit {
+    background: transparent;
+    border-color: white;
+    color: white;
+    padding: 10px 20px;
+    border-width: 3px;
+    border-radius: 3px;
+    font-weight: bold;
+    font-size: 18px;
+    margin-top: 20px;
+    display: block;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    transition: .4s;
+}
+
+.btn-submit:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.btn-signup {
+    display: inline-block;
+    background: transparent;
+    border-color: white;
+    color: white;
+    border: 3px solid white;
+    border-radius: 3px;
+    font-weight: bold;
+    font-size: 14px;
+    margin-top: 20px;
+    display: block;
+    width: 40%;
+    height: 30px;
+    text-align: center;
+    text-decoration: none;
+    margin-left: auto;
+    margin-right: auto;
+    transition: .4s;
+}
+
+.btn-signup:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.form-label {
+    margin-top: 1em;
+}
+
+.log-reg-form {
+    width: 500px;
+    margin: 0 auto;
+    padding: 40px;
+    color: white;
+}
+
+label {
+    font-weight: bold;
+}
+
+input {
+    display: block;
+    width: 95%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    background: white;
+    font-weight: bold;
+
+}
+
+.tbl-form {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.td-label {
+    width: 150px;
+}

@@ -1,0 +1,36 @@
+*{
+  color: white;
+}
+
+.container-main {
+  padding: 30px;
+  padding-left: 20%;
+  padding-right: 20%;
+}
+
+.product-detail {
+  margin-top: 20px;
+}
+
+.product-detail h1{
+  text-align: center;
+}
+
+.product-info {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.product-detail img {
+  height: 400px;
+  width: 400px;
+}
+
+.product-detail p {
+  margin-bottom: 10px;
+}
+
+.product-detail strong {
+  font-weight: bold;
+}

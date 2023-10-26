@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% block head %}
+    <title>{% block title %}AUTO-SHOP{% endblock %}</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Welcome to our auto shop! Discover a wide range of high-quality automotive parts and accessories. We offer expert car repair services and top-notch customer support. Find everything you need to keep your vehicle running smoothly.">
+
+    {% load static %}
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'images/apple-touch-icon.png' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'images/favicon-32x32.png' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'images/favicon-16x16.png' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
+    <link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    {% endblock %}
+    
+</head>
+
+<body>
+
+        <div class="nav-container">
+            <nav>
+                {% block topbar %}
+                <a href="{% url 'home' %}"><img class="logo" src="{% static 'images/autoshop_logo.png' %}"
+                        alt="AUTO-SHOP logo"></a>
+                <ul>
+                    <li><a href="{% url 'product_list' %}">Auto parts</a></li>
+                    <li><a href="{% url 'vacancies' %}">Vacancies</a></li>
+                    <li><a href="{% url 'news' %}">News</a></li>
+                    <li><a href="{% url 'faq' %}">FAQ</a></li>
+                    <li><a href="{% url 'review-list' %}">Reviews</a></li>
+                    <li><a href="{% url 'contacts' %}">Contacts</a></li>
+                    <li><a href="{% url 'about' %}">About us</a></li>
+                    {% if user.is_staff%}
+                    <li><a href="{% url 'statistics' %}">ADMIN:STATS</a></li>
+                    {% endif %}
+                </ul>
+                {% if not user.is_authenticated %}
+                <a href="{% url 'signin' %}" class="btn-sign-in-up-out">Sign in/Sign up</a>
+                {% else %}
+                <a href="{% url 'logout' %}" class="btn-sign-in-up-out">Log out</a>
+                {% endif %}
+                {% endblock %}
+            </nav>
+            <div class="nav-underline"></div>
+        </div>
+
+    <section>
+        <div class="container-content">
+            {% block content %}{% endblock %}
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+
+            <div class="footer-column">
+                <h4>About Us</h4>
+                <p>At AUTO-SHOP, we are passionate about automobiles and providing high-quality auto parts to our valued
+                    customers. With years of experience in the industry, we have established ourselves as a trusted
+                    destination <q cite="http://www.asimovonline.com">for all your automotive needs.</q></p>
+            </div>
+
+            <div class="footer-column">
+                <h4>Contact Us</h4>
+                <p>Tamgdeto 33, 4, Minsk</p>
+                <p>Email: autoshop.info@gamil.com</p>
+                <p>Phone: +375 (33) 152-44-33</p>
+            </div>
+
+            <div class="footer-column">
+                <h4>Follow Us</h4>
+                <div class="social-icons">
+                    <a href="http://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+                    <a href="http://telegram.com" target="_blank"><i class="fab fa-telegram"></i></a>
+                    <a href="http://instargam.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="http://viber.com" target="_blank"><i class="fab fa-viber"></i></a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2023 AUTO-SHOP. All rights reserved.</p>
+        </div>
+
+    </footer>
+</body>
+
+</html>

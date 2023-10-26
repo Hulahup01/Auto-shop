@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Vacancies{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'info/css/vacancies.css' %}" />
+
+<div class="container-main">
+
+    <h2 class="vacancies-title">Job Vacancies at Our Auto Parts Store</h2>
+    
+    <br>
+
+    <article itemscope itemtype="https://schema.org/JobPosting">
+        <h3 itemprop="title">Parts Sales Associate</h3>
+        <p itemprop="description"><strong>Job Description:</strong> We are looking for a Parts Sales Associate to assist
+            customers in finding the right auto parts for their vehicles and provide excellent customer service.</p>
+        <p><strong>Requirements:</strong></p>
+        <ul>
+            <li itemprop="educationRequirements">High school diploma or equivalent</li>
+            <li itemprop="experienceRequirements">Previous experience in sales or customer service</li>
+            <li>Good knowledge of auto parts and their functions</li>
+        </ul>
+        <p><strong>Application Deadline: October 15, 2023</strong></p>
+    </article>
+
+    <article itemscope itemtype="https://schema.org/JobPosting">
+        <h3 itemprop="title">Warehouse Technician</h3>
+        <p itemprop="description"><strong>Job Description:</strong> We are seeking a Warehouse Technician to handle
+            receiving, storing, and organizing auto parts in our warehouse.</p>
+        <p><strong>Requirements:</strong></p>
+        <ul>
+            <li itemprop="educationRequirements">High school diploma or equivalent</li>
+            <li itemprop="experienceRequirements">Experience in warehouse operations</li>
+            <li>Attention to detail and organizational skills</li>
+        </ul>
+        <p><strong>Application Deadline: October 20, 2023</strong></p>
+    </article>
+
+    <article itemscope itemtype="https://schema.org/JobPosting">
+        <h3 itemprop="title">Automotive Technician</h3>
+        <p itemprop="description"><strong>Job Description:</strong> We are hiring an Automotive Technician to diagnose,
+            repair, and maintain vehicles for our customers.</p>
+        <p><strong>Requirements:</strong></p>
+        <ul>
+            <li itemprop="educationRequirements">Certification in Automotive Technology</li>
+            <li itemprop="experienceRequirements">Proven experience as an Automotive Technician</li>
+            <li>Strong knowledge of vehicle systems and troubleshooting</li>
+        </ul>
+        <p><strong>Application Deadline: October 25, 2023</strong></p>
+    </article>
+
+    <article itemscope itemtype="https://schema.org/JobPosting">
+        <h3 itemprop="title">E-commerce Specialist</h3>
+        <p itemprop="description"><strong>Job Description:</strong> We are seeking an E-commerce Specialist to manage
+            our
+            online presence, update product listings, and handle customer inquiries.</p>
+        <p><strong>Requirements:</strong></p>
+        <ul>
+            <li itemprop="educationRequirements">Bachelor's degree in Marketing or a related field</li>
+            <li itemprop="experienceRequirements">Experience in e-commerce and digital marketing</li>
+            <li>Proficiency in online platforms and analytics</li>
+        </ul>
+        <p><strong>Application Deadline: October 30, 2023</strong></p>
+    </article>
+
+</div>
+{% endblock %}

@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Create Review{% endblock %}
+
+{% block content %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'reviews/css/review_create.css' %}">
+
+<div class="container-main">
+
+    <div class="review">
+
+        <h1>Review</h1>
+
+        <form method="post">
+            {% csrf_token %}
+
+            <div class="rating">
+                <input type="radio" id="star5" name="rating" value="5" required="required"/><label for="star5" title="5 star"></label>
+                <input type="radio" id="star4" name="rating" value="4" required="required"/><label for="star4" title="4 star"></label>
+                <input type="radio" id="star3" name="rating" value="3" required="required"/><label for="star3" title="3 star"></label>
+                <input type="radio" id="star2" name="rating" value="2" required="required"/><label for="star2" title="2 star"></label>
+                <input type="radio" id="star1" name="rating" value="1" required="required"/><label for="star1" title="1 star"></label>
+            </div>
+
+            <input type="text" id="id_title" name="title" maxlength="50" required="required" placeholder="Title">
+            <textarea id="id_content" name="content" required="required" maxlength="250" placeholder="Content"></textarea>
+
+            <button type="submit" class="btn-submit">Save</button>
+
+        </form>
+
+    </div>
+
+
+
+</div>
+
+{% endblock %}

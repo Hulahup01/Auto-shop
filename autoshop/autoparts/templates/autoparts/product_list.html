@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %} HomeAutoShop {% endblock %}
+
+{% block content %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'autoparts/css/product_list.css' %}" />
+
+
+<div class="container-main">
+
+    <div class="container-grid">
+
+        <div class="info-search">
+            info
+        </div>
+
+        <div class="sidebar">
+            sidebar
+        </div>
+
+        <div class="content">
+            <div class="product-list">
+                {% if product_types %}
+
+                {% for product_type in product_types %}
+                {% for product in product_type.products.all %}
+
+                <div class="product" itemscope itemtype="https://schema.org/Product">
+                    <a class="product-image" href="{{ product.get_absolute_url }}">
+                        <img src="{{ product.image.url }}" alt="product image" itemprop="image">
+                    </a>
+
+                    <div class="product-info">
+                        <h3>{{ product.name }}</h3>
+                        <div class="description">
+                            <p class="product-type"><span>Type: </span> {{ product.product_type.type }} </p>
+                            <p class="product-price"><span>Price: </span> {{ product.price }} </p>
+                        </div>
+                        <a class="btn" href="{{ product.get_absolute_url }}"> BUY </a>
+                    </div>
+
+
+
+                </div>
+
+                {% endfor %}
+                {% endfor %}
+
+                {% else %}
+                <h1> There are no products </h1>
+                {% endif %}
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+{% endblock %}

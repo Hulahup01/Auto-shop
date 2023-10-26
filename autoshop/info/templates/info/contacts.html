@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Contacts{% endblock %}
+
+{% block content %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'info/css/contacts.css' %}" />
+
+<div class="container-main">
+    <section>
+        <h1 class="contacts-title">Contacts</h1>
+        <div class="section-employees">
+            <ul>
+                <li itemscope itemtype="https://schema.org/Person">
+                    <img src="{% static 'info/images/Mihail.jpg'%}" alt="employee" itemprop="image">
+                    <h3 itemprop="name">Mihail Ivanov</h3>
+                    <p itemprop="jobTitle">Director</p>
+                    <p>Email: <a href="mailto:Mihail.Ivanov@gmail.com" itemprop="email">Mihail.Ivanov@gmail.com</a></p>
+                    <p>Phone: <span itemprop="telephone">+375 (33) 423-65-22</span></p>
+                </li>
+                <li itemscope itemtype="https://schema.org/Person">
+                    <img src="{% static 'info/images/Vadim.jpg' %}" alt="employee" itemprop="image">
+                    <h3 itemprop="name">Vadim Tupak</h3>
+                    <p itemprop="jobTitle">Mechanic</p>
+                    <p>Email: <a href="mailto:vadim.tupak@gmail.com" itemprop="email">vadim.tupak@gmail.com</a></p>
+                    <p>Phone: <span itemprop="telephone">+375 (29) 621-51-76</span></p>
+                </li>
+                <li itemscope itemtype="https://schema.org/Person">
+                    <img src="{% static 'info/images/Victor.jpg'%}" alt="employee" itemprop="image">
+                    <h3 itemprop="name">Victor Rubertovich</h3>
+                    <p itemprop="jobTitle">Mechanic</p>
+                    <p>Email: <a href="mailto:Victor.gg@gmail.com" itemprop="email">Victor.gg@gmail.com</a></p>
+                    <p>Phone: <span itemprop="telephone">+375 (29) 554-31-65</span></p>
+                </li>
+                <li itemscope itemtype="https://schema.org/Person">
+                    <img src="{% static 'info/images/Women.jpg'%}" alt="employee" itemprop="image">
+                    <h3 itemprop="name">Marina Popovka</h3>
+                    <p itemprop="jobTitle">Manager</p>
+                    <p>Email: <a href="mailto:Marina.Popovka@gmail.com" itemprop="email">Marina.Popovka@gmail.com</a></p>
+                    <p>Phone: <span itemprop="telephone">+375 (33) 491-41-44</span></p>
+                </li>
+                <li itemscope itemtype="https://schema.org/Person">
+                    <img src="{% static 'info/images/super_kid.jpg'%}" alt="employee" itemprop="image">
+                    <h3 itemprop="name">Antoshka Kivich</h3>
+                    <p itemprop="jobTitle">Accountant</p>
+                    <p>Email: <a href="mailto:Antoshka.Kivich@gmail.com" itemprop="email">Antoshka.Kivich@gmail.com</a></p>
+                    <p>Phone: <span itemprop="telephone">+375 (33) 451-43-74</span></p>
+                </li>
+                <li itemscope itemtype="https://schema.org/Person">
+                    <img src="{% static 'info/images/Eduard.jpg'%}" alt="employee" itemprop="image">
+                    <h3 itemprop="name">Eduard Fomin</h3>
+                    <p itemprop="jobTitle">Mechanic</p>
+                    <p>Email: <a href="mailto:Eduardoinni@gmail.com" itemprop="email">Eduardoinni@gmail.com</a></p>
+                    <p>Phone: <span itemprop="telephone">+375 (29) 945-49-95</span></p>
+                </li>
+                <li itemscope itemtype="https://schema.org/Person">
+                    <img src="{% static 'info/images/Alexandr.jpg'%}" alt="employee" itemprop="image">
+                    <h3 itemprop="name">Alexandr Bulkin</h3>
+                    <p itemprop="jobTitle">Manager/p>
+                    <p>Email: <a href="mailto:Bulkinohaha@gmail.com" itemprop="email">Bulkinohaha@gmail.com</a></p>
+                    <p>Phone: <span itemprop="telephone">+375 (33) 185-04-19</span></p>
+                </li>
+            </ul>
+        </div>
+    </section>
+</div>
+
+{% endblock %}

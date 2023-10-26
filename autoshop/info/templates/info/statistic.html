@@ -1,0 +1,132 @@
+{% extends "base.html" %}
+
+{% block title %}Statistics{% endblock %}
+
+{% block content %}
+
+<style>
+
+@import url("https://fonts.googleapis.com/css2?family=Alumni+Sans+Collegiate+One&family=Playpen+Sans:wght@100&display=swap");
+
+table {
+  border-collapse: collapse; 
+  margin: 20px 0;
+}
+
+td:empty {
+  background-color: #ff9b9b;
+}
+
+caption {
+  font-size: 20px; 
+  text-align: center;
+  background-color: #303030; 
+  color: #ffffff; 
+  padding: 10px; 
+  font-family: 'Playpen Sans' 'Sans' cursive;
+}
+
+
+th, td {
+  padding: 10px; 
+  text-align: center; 
+  vertical-align: middle; 
+  
+}
+
+th[scope="row"] {
+  background-color: #838383;
+  color:rgb(255, 255, 255);
+}
+
+th[scope="col"] {
+  background-color: #4b4a4a;
+}
+
+#users {
+  background-color: antiquewhite;
+}
+
+
+.text-fragment {
+    padding:10px;
+    margin: 20px;
+    text-transform: capitalize;
+    text-indent: 3%;
+    line-height: 3;
+    font-variant: small-caps;
+    word-spacing: 3px;
+    letter-spacing: 3px;
+    hyphens: auto;
+    word-break: break-all;
+    font-family: Calibri, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: left;
+    position: relative;
+    top: 30px;
+    left: 10px;
+}
+
+</style>
+
+<h2>Joke</h2>
+<p>{{ joke_setup }}</p>
+<p>{{ joke_punchline }}</p>
+
+<table border="1">
+  <caption>Statistics</caption>
+  <tbody>
+    <tr>
+      <td>total amount</td>
+      <td>{{ total_amount }}</td>
+    </tr>
+    <tr>
+      <td>most popular product</td>
+      <td>{{ most_popular_product }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<table id="users" border="1">
+  <caption>Users</caption>
+  <thead>
+    <tr>
+      <th scope="col">Last Name</th>
+      <th scope="col">First Name</th>
+      <th scope="col">Email</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for user in sorted_users %}
+    <tr>
+      <th scope="row">{{ user.email }}</td>
+      <td>{{ user.last_name }}</td>
+      <td>{{ user.first_name }}</td>
+    </tr>
+    {% endfor %}
+    <tr>
+      <th scope="row">"TEST</th>
+      <td></td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+
+
+<p class="text-fragment" lang="en">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dicta cupiditate omnis voluptas ipsam neque dolore. Explicabo vero quisquam distinctio cum suscipit corporis ab perferendis maxime deserunt. Doloribus ipsum, iure molestiae placeat dolore eius repellendus rerum, minus quos ipsam dignissimos nostrum voluptas dolorum nemo iste possimus illum quod accusamus molestias quaerat laboriosam consequuntur eligendi? Voluptatem quidem magni repudiandae labore, numquam deleniti sapiente. Atque eligendi hic exercitationem excepturi quos totam sapiente ab repellat temporibus sint adipisci optio, cum consequatur ratione enim cupiditate, a blanditiis rem magnam! At facilis quo aspernatur ex laborum exercitationem obcaecati repudiandae saepe consectetur, dolorum numquam culpa, dolores placeat officiis natus esse excepturi? Non itaque fugiat praesentium, repudiandae placeat commodi debitis quibusdam corrupti optio voluptatem quis at consequatur ut aspernatur. Voluptatem a eveniet veniam exercitationem nihil, asperiores harum sit tenetur molestias quas architecto id earum et, distinctio vero officiis vitae ducimus nam voluptatibus neque sapiente. Repellendus autem eum est, laborum doloremque deleniti optio eos obcaecati, beatae laboriosam esse, reiciendis in similique voluptatem minus alias voluptatibus doloribus sunt soluta! Cum rem mollitia nobis unde repellendus at vitae esse dicta? Blanditiis et alias voluptate cum laudantium deleniti quis quae quidem? Vel, hic ullam corporis accusamus ex labore similique mollitia repellat eius rem officiis voluptatem in repellendus blanditiis provident facere fugiat quaerat tempora nobis delectus veritatis assumenda, aperiam error placeat. Esse voluptate quos minus cupiditate libero optio error deserunt quo recusandae porro? Exercitationem quo iste molestias incidunt commodi, nihil ex blanditiis, ut asperiores, voluptatum harum esse necessitatibus aut! Quaerat porro consequuntur aperiam rem libero sint assumenda obcaecati, non vel molestiae quam eum iusto nisi nemo autem unde debitis tenetur placeat harum mollitia fugit doloribus! Minus odio tempora provident? Quos eius dolore dolor, ipsam magni veniam. Optio, eos dolor vitae reprehenderit, a ullam voluptates, reiciendis sed saepe dolores possimus. Debitis, eaque, assumenda odio alias vel voluptas vitae voluptatem illum ipsum sit esse saepe tempore, nesciunt magnam delectus aut quis error! Debitis, architecto! Iusto libero ut provident culpa ullam blanditiis illum excepturi, doloremque ipsum. Omnis doloribus necessitatibus voluptas possimus aperiam consequatur voluptates dicta esse architecto natus aspernatur placeat minima optio nisi adipisci dolorem, ea maxime, id a quas at? Dolor beatae quos laudantium! Corporis saepe aliquid, ab cum omnis debitis assumenda dolore cupiditate. Asperiores odio, ratione veniam veritatis enim voluptatem itaque libero tempora eum esse beatae architecto alias rem non natus dicta ipsa dolores reiciendis odit. Harum cupiditate pariatur nulla inventore praesentium consequatur dolorum voluptas officia voluptate, quod, impedit nihil aliquam numquam minus et fugiat. Hic aliquam voluptate, atque rerum nostrum repellat! Aspernatur minus eligendi nisi neque odio ex at asperiores sunt, sapiente sequi! Voluptates unde velit reprehenderit a fuga libero, eos deleniti labore fugiat quasi! Recusandae ducimus laboriosam modi unde, minus ipsum perferendis repellendus amet ipsam similique, porro sed. Sit cum doloribus deserunt odio et voluptatem obcaecati reprehenderit, quidem, sint omnis distinctio ad nobis quaerat quia adipisci tempora? Quos aliquid dolores reiciendis est iusto quae doloribus eligendi cupiditate earum? Provident non unde illo, id ex itaque nostrum ratione eius tempora iure accusantium architecto?</p>
+
+<br>
+
+<audio src="/media/audio/oof.mp3" controls></audio>
+<a href="/media/audio/oof.mp3" download>I Want it!</a>
+
+<p>I like apples and oranges.</p>
+<blockquote cite="http://en.wikipedia.org/wiki/Apple">
+The apple forms a tree that is small and deciduous, reaching 3 to 12 meters (9.8 to 39 ft) tall, with a broad, often densely twiggy crown.
+</blockquote>
+<p>My favorite kind of orange is the mandarin</p>
+
+
+
+{% endblock %}

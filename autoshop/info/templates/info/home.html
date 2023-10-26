@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %} HomeAutoShop {% endblock %}
+
+{% block content %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'info/css/home.css' %}" />
+
+
+<div class="home-page">
+
+
+  <h1 class="home-title">Welcome to the AUTO-SHOP</h1>
+
+
+  <section class="home-news">
+    <article class="article" itemscope itemtype="https://schema.org/Article">
+      <img itemprop="image" src="{{ latest_news.image.url }}" alt="article image" height="280">
+      <div class="textWrapper">
+        <h3 itemprop="name" class="title">{{ latest_news.title }}</h3>
+        <p class="content"><a itemprop="content" href="{{ latest_news.get_absolute_url }}">
+            {{ latest_news.content|linebreaks|truncatewords:25 }}
+          </a>
+        </p>
+      </div>
+    </article>
+  </section>
+
+
+  <section class="home-ad-banners">
+
+    <div class="ad-banner">
+      <a href="https://autoostrov.by/masla-i-avtohimiya/masla-motornyie/valvoline/" target="_blank"><img
+          src="https://autoostrov.by/media/files/slider/inside-placeholder-valvoline.webp" alt="Ad Banner"></a>
+    </div>
+
+    <div class="ad-banner">
+      <a href="https://autoostrov.by/masla-i-avtohimiya/masla-motornyie/shell/" target="_blank"><img
+          src="https://autoostrov.by/media/files/slider/inside-placeholder-shell.webp" alt="Ad Banner"></a>
+    </div>
+
+    <div class="ad-banner">
+      <a href="https://autoostrov.by/masla-i-avtohimiya/masla-motornyie/revline/" target="_blank"><img
+          src="https://autoostrov.by/media/files/slider/inside-placeholder-revline.webp" alt="Ad Banner"></a>
+    </div>
+
+    <div class="ad-banner">
+      <a href="https://exist.by/masla-i-avtohimiya/" target="_blank"><img
+          src="https://exist.by/media/files/slider/inside-placeholder-Senfineco3.png" alt="Ad Banner"></a>
+    </div>
+
+  </section>
+
+
+
+
+  <section class="home-partners">
+    <div class="partners-logo">
+      <a href="https://autoostrov.by/masla-i-avtohimiya/masla-motornyie/valvoline/" target="_blank"><img
+          src="https://static.tildacdn.com/tild6239-3466-4065-a630-633336633830/_26069-04.svg" alt="Partner"></a>
+    </div>
+    <div class="partners-logo">
+      <a href="https://autoostrov.by/masla-i-avtohimiya/masla-motornyie/shell/" target="_blank"><img
+          src="https://static.tildacdn.com/tild6531-6630-4266-b232-376331353435/__260132-02.svg" alt="Partner"></a>
+    </div>
+    <div class="partners-logo">
+      <a href="https://autoostrov.by/masla-i-avtohimiya/masla-motornyie/revline/" target="_blank"><img
+          src="https://static.tildacdn.com/tild6238-6662-4930-b932-656362616132/_260114-03.svg" alt="Partner"></a>
+    </div>
+    <div class="partners-logo">
+      <a href="https://exist.by/masla-i-avtohimiya/" target="_blank"><img
+          src="https://static.tildacdn.com/tild6332-6663-4732-a439-613130646366/__260106-09.svg" alt="Partner"></a>
+    </div>
+    <div class="partners-logo">
+      <a href="https://autoidea.by/" target="_blank"><img src="https://autoidea.by/assets/svg/white-logo.svg"
+          alt="Partner"></a>
+    </div>
+  </section>
+
+
+</div>
+{% endblock %}

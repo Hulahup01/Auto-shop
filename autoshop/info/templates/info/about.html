@@ -1,0 +1,141 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block title %}About{% endblock %}
+
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'info/css/about.css' %}">
+
+<div class="container-main">
+
+    <section>
+        <h2>About Us</h2>
+        <figure>
+            <img class="logo-about" src="{% static 'images/autoshop_logo.png' %}" height="200" alt="auto-shop logo">
+            <figcaption style="display: flex; align-items: center; justify-content: center;">auto-shop logo</figcaption>
+        </figure>
+        <p>At AUTO-SHOP, we are passionate about automobiles and providing high-quality auto parts to our valued
+            customers. With years of experience in the industry, we have <abbr title="As soon as possible">ASAP</abbr> established ourselves as a trusted destination
+            for
+            all your automotive needs.</p>
+    </section>
+
+    <hr>
+
+    <section>
+        <h2>Trailer</h2>
+        <iframe class="video" src="https://www.youtube.com/embed/mrYno_FPUlk" frameborder="0" allowfullscreen></iframe>
+    </section>
+
+    <hr>
+
+    <section class="history">
+        <h2>History</h2>
+
+        <br>
+
+        <h3>2021 - Store opening</h3>
+        <p>
+            In 2021, our auto parts store opened its doors in the heart of the city. We aimed to provide a seamless
+            integration of quality auto parts and exceptional customer service. From the very beginning, our focus
+            has been on
+            offering a wide range of auto parts, from essential components to specialized accessories, catering to
+            the needs of
+            all car enthusiasts.
+        </p>
+        <p>
+            With a commitment to inclusivity, we implemented an online platform that allows customers from all
+            around the world
+            to explore and purchase auto parts with ease. We strived to create a store that would not only meet the
+            demands of
+            the automotive industry but also serve as a hub for knowledge sharing and community engagement.
+            <blockquote>
+                <q lang="en">Be yourself, everyone else is already taken.</q>
+                <q lang="ru">Будь собой, все остальные уже заняты.</q>
+                <cite>Oscar Wilde</cite>
+            </blockquote>
+        </p>
+
+        <br>
+
+        <h3>2022 - Adapting to change</h3>
+        <p>
+            The year 2022 presented its own set of challenges for our auto parts store. The automotive landscape
+            experienced
+            various shifts, including technological advancements and changing consumer preferences. We embraced
+            these changes
+            and adapted our inventory and services accordingly.
+        </p>
+        <p>
+            We expanded our product range to include cutting-edge auto parts for electric vehicles and hybrid
+            models. Our
+            knowledgeable staff underwent training to provide expert advice on these emerging technologies.
+            Additionally, we
+            enhanced our online presence and introduced virtual consultations to ensure convenient access to our
+            products and
+            expertise.
+        </p>
+
+        <br>
+
+        <h3>2023 - Driving growth</h3>
+        <p>
+            Fast-forward to 2023, our auto parts store has experienced tremendous growth and success. We have become
+            a trusted
+            destination for car owners, mechanics, and automotive enthusiasts alike. Our commitment to quality,
+            reliability,
+            and customer satisfaction has propelled us forward.
+        </p>
+        <p>
+            In 2023, we further expanded our inventory, partnering with renowned auto parts manufacturers to offer
+            an even
+            wider selection of top-notch products. We continued to invest in our online infrastructure, ensuring a
+            seamless
+            shopping experience for our customers. Furthermore, we organized events and workshops to foster
+            knowledge sharing
+            and build a vibrant community of car enthusiasts.
+        </p>
+
+        <br>
+
+    </section>
+
+    <hr>
+
+    <section class="certificate-container ">
+        <div class="gradient-overlay">
+            <h2 class="certificate-title">CERTIFICATE</h2>
+            <h3 class="recipient-name">AUTO-SHOP</h3>
+            <img class="certificate-logo" src="{% static 'images/autoshop_logo.png' %}" alt="museum logo">
+            <p>
+                In appreciation of your continued patronage, we hereby present you with this Certificate of Excellence. Your loyalty and trust in our services have made us what we are today.
+                This certificate entitles you to a special discount on your next purchase at AUTO-SHOP. We thank you for choosing us as your trusted source for all your automotive needs.
+            </p>
+            <p class="certificate-date">
+                <time datetime="2021-07-07">July 7</time>
+            </p>
+        </div>
+    </section>
+
+    <hr>
+
+    <section class="contacts" itemscope itemtype="https://schema.org/Organization">
+        <h3>Contact Information</h3>
+        <p itemprop="address">Mailing Address: Tamgdeto 33, 4, Minsk, 220019</p>
+        <br>
+        <br>
+        <p>Email Address:</p>
+        <p itemprop="email">autoshop.info@gamil.com</p>
+        <br>
+        <p>Contact Center Phone:</p>
+        <p>+375 (33) 152-44-33 (MTS, A1, life:))</p>
+        <p itemprop="telephone">Operating Hours: 8:30 AM - 8:30 PM</p>
+        <br>
+        <br>
+        <p>You can reach us through the online chat on our website, as well as via Viber and Telegram.</p>
+    </section>
+
+</div>
+{% endblock %}

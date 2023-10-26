@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Reviews{% endblock %}
+
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'reviews/css/review_list.css' %}">
+
+<div class="container-main">
+
+    <h1 class="review-title">Reviews</h1>
+
+    <a class="btn" href="{% url 'review-create' %}">New review</a>
+
+    <div class="review-list">
+
+        {% if not review_list %}
+        <p>No reviews</p>
+        {% endif %}
+
+        {% for review in review_list %}
+        <div class="review">
+            <article itemscope itemtype="https://schema.org/UserReview">
+                <h2 itemprop="name">{{ review.title }}</h2>
+                <h2 itemprop="reviewRating">{{ review.rating }}</h2>
+                <p itemprop="reviewBody">{{ review.content }}</p>
+                <h5>
+                    Author: {{ review.author.first_name }} {{ review.author.last_name }} -
+                    <time itemprop="dateCreated" content="{{ review.created_at }}">{{ review.created_at }}</time>
+                </h5>
+            </article>
+        </div>
+        {% endfor %}
+
+    </div>
+
+
+</div>
+
+{% endblock %}

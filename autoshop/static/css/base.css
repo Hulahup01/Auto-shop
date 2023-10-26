@@ -1,0 +1,199 @@
+:root {
+    --height-body: 900px;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Open Sans', 'Calibri';
+    box-sizing: border-box;
+}
+
+body {
+    position: relative;
+}
+
+.container-content {
+    background-color: #4871A9;
+    min-height: var(--height-body);
+}
+
+.nav-container {
+    position: sticky;
+    top: 0px;
+    width: 100%;
+    background-color: #4871A9;
+    z-index: 100;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 5px;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+
+.nav-underline {
+    height: 3px;
+    background-color: white;
+    width: 100%;
+    border-radius: 2.5px;
+}
+
+.logo {
+    width: 200px;
+    height: 50px;
+    cursor: grab;
+    animation: main-logo-rotate 4s linear infinite;
+}
+
+
+nav ul li {
+    list-style-type: none;
+    display: inline-block;
+    padding: 10px 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+nav ul li a:hover {
+    color: #24272B;
+    transition: .3s;
+}
+
+.btn-sign-in-up-out {
+    display: inline-block;
+    padding: 5px 25px;
+    background-color: transparent;
+    border: 3px solid white;
+    border-radius: 30px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    text-decoration: none;
+    transition: .4s;
+}
+
+.btn-sign-in-up-out:hover {
+    cursor: pointer;
+    transform: scale(1.2);
+}
+
+
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+}
+
+.footer-column {
+    flex-basis: 30%;
+    margin-bottom: 20px;
+    text-align: center;
+
+}
+
+.footer-column h4 {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.footer-column p {
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.social-icons a {
+    color: #fff;
+    margin-right: 10px;
+    font-size: 20px;
+}
+
+.footer-bottom {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.footer-bottom p {
+    font-size: 12px;
+}
+
+
+.fa-facebook:hover {
+    color: #3b5998;
+}
+
+.fa-viber:hover {
+    color: #642aec;
+}
+
+.fa-instagram:hover {
+    color: #e4405f;
+}
+
+.fa-telegram:hover {
+    color: #1e8cd6;
+}
+
+@keyframes main-logo-rotate {
+    0% {
+        transform: scale(1) rotate(0deg);
+    }
+
+    25% {
+        transform: scale(1) rotate(5deg);
+    }
+
+    50% {
+        transform: scale(1) rotate(0deg);
+    }
+
+    75% {
+        transform: scale(1) rotate(-5deg);
+    }
+
+    100% {
+        transform: scale(1) rotate(0deg);
+    }
+}
+
+
+@-webkit-keyframes main-logo-rotate{
+    0% {
+        transform: scale(1) rotate(0deg);
+    }
+
+    25% {
+        transform: scale(1) rotate(5deg);
+    }
+
+    50% {
+        transform: scale(1) rotate(0deg);
+    }
+
+    75% {
+        transform: scale(1) rotate(-5deg);
+    }
+
+    100% {
+        transform: scale(1) rotate(0deg);
+    }
+}

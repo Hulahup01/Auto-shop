@@ -1,0 +1,108 @@
+{% extends "base.html" %}
+
+{% load static %}
+{% block title %}FAQ{% endblock %}
+{% block content %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'info/css/faq.css' %}" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+
+<div class="faq-page">
+
+  <h1 id="start" class="faq-title">Frequently asked question</h1>
+
+  <section class="content">
+    <div class="question-list">
+
+      <article class="question">
+        <details>
+          <summary>Do you offer a warranty on your car parts?</summary>
+          <p><span class="date">01.05.2023:</span>
+            Yes, we offer a warranty on all our car parts. Please refer to our warranty policy for more details.
+          </p>
+        </details>
+      </article>
+
+      <article class="question">
+        <details>
+          <summary>How can I find the right car part for my vehicle?</summary>
+          <p><span class="date">02.05.2023:</span>
+            You can use our online search feature by entering your vehicle's make, model, and year to find compatible
+            parts.</p>
+        </details>
+      </article>
+
+      <article class="question">
+        <details>
+          <summary>Can I return a car part if it doesn't fit or if I change my mind?</summary>
+          <p><span class="date">03.05.2023:</span>
+            Yes, we have a return policy in place. Please review our return policy for information on eligibility and
+            procedures.</p>
+        </details>
+      </article>
+
+      <article class="question">
+        <details>
+          <summary>Are your car parts genuine OEM (Original Equipment Manufacturer) or aftermarket?</summary>
+          <p><span class="date">04.05.2023:</span>
+            We offer both genuine OEM parts and high-quality aftermarket parts. The product description will specify
+            the type.</p>
+        </details>
+      </article>
+
+      <article class="question">
+        <details>
+          <summary>How long does shipping take for car parts?</summary>
+          <p><span class="date">05.05.2023:</span>
+            Shipping times vary depending on your location and the chosen shipping method. Please check our shipping
+            policy for estimated delivery times.</p>
+        </details>
+      </article>
+
+      <article class="question">
+        <details>
+          <summary>Do you provide installation services for car parts?</summary>
+          <p><span class="date">06.05.2023:</span>
+            We do not provide installation services, but we can recommend trusted local mechanics or provide
+            installation guides for certain parts. </p>
+        </details>
+      </article>
+
+      <article class="question">
+        <details>
+          <summary>How can I track my order?</summary>
+          <p><span class="date">06.05.2023:</span>
+            Once your order is shipped, we will provide you with a tracking number via email or through your account
+            on our website.</p>
+        </details>
+      </article>
+
+      <article class="question">
+        <details>
+          <summary>What payment methods do you accept?</summary>
+          <p><span class="date">06.05.2023:</span>
+            We accept various payment methods, including credit/debit cards, PayPal, and other secure online payment
+            options.</p>
+        </details>
+      </article>
+
+      <article class="question">
+        <details>
+          <summary>Can I contact your customer support for assistance and inquiries?</summary>
+          <p><span class="date">06.05.2023:</span>
+            Absolutely! Our customer support team is available via phone, email, or live chat to assist you with any
+            questions or concerns.</p>
+        </details>
+      </article>
+
+    </div>
+  </section>
+
+  <a href="#start" class="button">
+    <span class="material-symbols-outlined">arrow_upward</span>
+    GO UP
+    <span class="material-symbols-outlined">arrow_upward</span>
+  </a>
+
+</div>
+{% endblock %}

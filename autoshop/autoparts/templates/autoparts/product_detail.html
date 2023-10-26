@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'autoparts/css/product_detail.css' %}">
+
+<div class="container-main">
+  
+  
+  <div class="product-detail">
+
+    <div class="product-info">
+
+      <img src="{{ product.image.url }}" alt="{{ product.name }}">
+
+      <div>
+        <h1>{{ product.name }}</h1>
+        <p><strong>Vendor Code:</strong> {{ product.vendor_code }}</p>
+        <p><strong>Product Type:</strong> {{ product.product_type }}</p>
+        <p><strong>Manufacturer:</strong> {{ product.manufacturer }}</p>
+        <p><strong>Price:</strong> ${{ product.price }}</p>
+        <p><strong>Quantity:</strong> {{ product.quantity }}</p>
+        <p><strong>Description:</strong> {{ product.description }}</p>
+      </div>
+    </div>
+
+    {% if product.quantity == 0 %}
+    <span> NOT IN STOCK </span>
+    {% elif not user.is_authenticated %}
+    <a href="{% url 'signin' %}"> BUY </a>
+    {% else %}
+    <a href="{% url 'purchase' product.vendor_code %}"> BUY </a>
+    {% endif %}
+
+  </div>
+</div>
+{% endblock %}

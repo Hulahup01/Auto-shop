@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}News details{% endblock %}
+
+
+{% block content %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'info/css/news_detail.css' %}">
+
+<div class="container-main">
+
+    <article itemscope itemtype="https://schema.org/Article">
+        <h1 itemprop="name">{{ news.title }}</h1>
+        <img itemprop="image" src="{{ news.image.url }}" alt="article image">
+        <p itemprop="articleBody">{{ news.content }}</p>
+    </article>
+    <a href="{% url 'news' %}">Back to the news</a>
+
+</div>
+{% endblock %}

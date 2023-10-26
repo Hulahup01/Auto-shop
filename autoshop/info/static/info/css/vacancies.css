@@ -1,0 +1,59 @@
+*{
+    color:white;
+}
+
+.container-main {
+    padding: 30px;
+    padding-left: 20%;
+    padding-right: 20%;
+}
+
+.vacancies-title{
+    text-align: center;
+    font-size: 50px;
+}
+
+article {
+    margin-bottom: 30px;
+    border: 1px solid white;
+    padding: 20px;
+
+    & h3 {
+        font-size: 18px;
+        margin-top: 0;
+    }
+    
+    & p {
+        margin-bottom: 10px;
+    }
+    
+    & ul {
+        margin-bottom: 10px;
+        padding-left: 20px;
+        
+    }
+
+    & li:first-child {
+        color: aquamarine;
+        font-weight: bold;
+    }
+
+    & li:nth-child(2){
+        color: thistle;
+        font-weight: bold;
+    }
+
+    & li:last-child {
+        color: darkorange;
+    }
+
+    & li::marker {
+        content: "\1F525  ";
+        margin-right: 0.5em;
+    }
+    
+    & strong {
+        font-weight: bold;
+    }
+}
+
