@@ -1,7 +1,9 @@
+
 .container-main { 
     padding-left: 10%;
     padding-right: 10%;
     display: flex;
+    color:black;
     flex-direction: column;
 }
 

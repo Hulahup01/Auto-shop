@@ -7,8 +7,19 @@
 <link rel="stylesheet" type="text/css" href="{% static 'info/css/home.css' %}" />
 
 
-<div class="home-page">
+<div class="parallax-container">
+  <div class="parallax-content">
+    <img src="{%static 'info/images/parallax-sun.png' %}" id="sun" alt="">
+    <img src="{%static 'info/images/parallax-clouds.png' %}" id="clouds" alt="">
+    <h2 id="text">AUTO-SHOP</h2>
+    <img src="{% static 'info/images/parallax-bg-cl2.png' %}" id="city" alt="">
+    <img src="{%static 'info/images/parallax-car.png' %}" id="car" alt="">
+  </div>
+</div>
 
+
+
+<div class="home-page">
 
   <h1 class="home-title">Welcome to the AUTO-SHOP</h1>
 
@@ -29,7 +40,64 @@
 
   <section class="home-ad-banners">
 
-    <div class="ad-banner">
+    <!--image slider start-->
+    <div class="slider">
+      <div class="slides">
+        <!--radio buttons start-->
+        <input type="radio" name="radio-btn" id="radio1" onclick="radioClicked(this)">
+        <input type="radio" name="radio-btn" id="radio2" onclick="radioClicked(this)">
+        <input type="radio" name="radio-btn" id="radio3" onclick="radioClicked(this)">
+        <input type="radio" name="radio-btn" id="radio4" onclick="radioClicked(this)">
+        <!--radio buttons end-->
+        <!--slide images start-->
+        <div class="slide first">
+          <a href="https://autoostrov.by/masla-i-avtohimiya/masla-motornyie/valvoline/" target="_blank"><img
+              src="https://autoostrov.by/media/files/slider/inside-placeholder-valvoline.webp" alt="Ad Banner"></a>
+        </div>
+        <div class="slide">
+          <a href="https://autoostrov.by/masla-i-avtohimiya/masla-motornyie/shell/" target="_blank"><img
+              src="https://autoostrov.by/media/files/slider/inside-placeholder-shell.webp" alt="Ad Banner"></a>
+        </div>
+        <div class="slide">
+          <a href="https://autoostrov.by/masla-i-avtohimiya/masla-motornyie/revline/" target="_blank"><img
+              src="https://autoostrov.by/media/files/slider/inside-placeholder-revline.webp" alt="Ad Banner"></a>
+        </div>
+        <div class="slide">
+          <a href="https://exist.by/masla-i-avtohimiya/" target="_blank"><img
+              src="https://exist.by/media/files/slider/inside-placeholder-Senfineco3.png" alt="Ad Banner"></a>
+        </div>
+        <!--slide images end-->
+        <!--automatic navigation start-->
+        <div class="navigation-auto">
+          <div class="auto-btn1"></div>
+          <div class="auto-btn2"></div>
+          <div class="auto-btn3"></div>
+          <div class="auto-btn4"></div>
+        </div>
+        <!--automatic navigation end-->
+      </div>
+      <!--manual navigation start-->
+      <div class="navigation-manual">
+        <label for="radio1" class="manual-btn"></label>
+        <label for="radio2" class="manual-btn"></label>
+        <label for="radio3" class="manual-btn"></label>
+        <label for="radio4" class="manual-btn"></label>
+      </div>
+      <!--manual navigation end-->
+    </div>
+    <!--image slider end-->
+
+    {% if user.is_authenticated %}
+
+    <form id="rotation-interval-form">
+      <label for="rotation-interval">Interval: </label>
+      <input type="number" id="rotation-interval" name="rotation-interval" value="5">
+      <button type="button" id="update-interval-button" onclick="updateRotationInterval()">Update</button>
+    </form>
+
+    {% endif %}
+
+    <!-- <div class="ad-banner">
       <a href="https://autoostrov.by/masla-i-avtohimiya/masla-motornyie/valvoline/" target="_blank"><img
           src="https://autoostrov.by/media/files/slider/inside-placeholder-valvoline.webp" alt="Ad Banner"></a>
     </div>
@@ -47,7 +115,7 @@
     <div class="ad-banner">
       <a href="https://exist.by/masla-i-avtohimiya/" target="_blank"><img
           src="https://exist.by/media/files/slider/inside-placeholder-Senfineco3.png" alt="Ad Banner"></a>
-    </div>
+    </div> -->
 
   </section>
 
@@ -79,4 +147,9 @@
 
 
 </div>
+
+<script src="{%static 'info/js/parallax.js'%}"></script>
+<script src="{%static 'info/js/timer.js'%}"></script>
+<script src="{%static 'info/js/banners.js'%}"></script>
+
 {% endblock %}

@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block title %}Statistics{% endblock %}
 
@@ -26,12 +27,11 @@ caption {
   font-family: 'Playpen Sans' 'Sans' cursive;
 }
 
-
 th, td {
   padding: 10px; 
   text-align: center; 
   vertical-align: middle; 
-  
+  border: 1px solid black;
 }
 
 th[scope="row"] {
@@ -67,6 +67,8 @@ th[scope="col"] {
     top: 30px;
     left: 10px;
 }
+
+
 
 </style>
 
@@ -126,6 +128,44 @@ th[scope="col"] {
 The apple forms a tree that is small and deciduous, reaching 3 to 12 meters (9.8 to 39 ft) tall, with a broad, often densely twiggy crown.
 </blockquote>
 <p>My favorite kind of orange is the mandarin</p>
+
+  <section id="associative-container">
+      <form class="form" name="associative-form">
+          <label for="firstname">Firstname:</label>
+          <input type="text" minlength="1" name="firstname" id="firstname">
+          <label for="lastname">Lastname:</label>
+          <input type="text" minlength="1" name="lastname" id="lastname">
+          <label for="studentClass">Class:</label>
+          <input type="text" name="studentClass" id="studentClass">
+          <input class="button button-green" type="submit" value="Add student">
+          <p id="validationResult"></p>
+      </form>
+      <ul id="student-list"></ul>
+  </section>
+
+
+<section id="table-container">
+  <form class="form" name="table-size-form">
+      <label for="table-size">Enter table size</label>
+      <input type="number" min="1" max="30" name="table-size" id="table-size">
+      <input class="button button-green" type="submit" value="Generate table!">
+  </form>
+  <div id="table-buttons-container" hidden>
+      <label for="max-selected-items">Max selected items</label>
+      <input type="number" name="max-selected-items" id="max-selected-items">
+      <button class="button button-green" id="add-row-button">Add row</button>
+      <button class="button button-green" id="add-column-button">Add column</button>
+      <button class="button button-green" id="transpose-button">Transpose</button>
+  </div>
+</section>
+
+<button onclick="LATSGO()">LATSGO</button>
+<div id="classes"></div>
+
+
+<script src="{% static 'info/js/table.js'%}"></script>
+<script src="{% static 'info/js/associative.js'%}"></script>
+<script src="{% static 'info/js/item.js'%}"></script>
 
 
 

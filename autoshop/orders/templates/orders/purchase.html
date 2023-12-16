@@ -1,5 +1,7 @@
 {% extends "base.html" %}
 
+{% load static%}
+
 {% block content %}
 
 <h1 style="text-align: center;">Purchase</h1>
@@ -13,7 +15,7 @@
             <i style="font-size: 15px; margin-left: 20px;"><strong>Manufacturer: </strong>{{prod.manufacturer.name}}</i>
         </ul>
         <ul>
-            <a style="font-size: 25px;"><strong>Quantity: </strong> {{ prod.quantity }}  </a>
+            <a style="font-size: 25px;"><strong>Quantity: </strong> {{ prod.quantity }} </a>
             <i style="font-size: 15px;"><strong>Unit price: </strong> {{ prod.price }}</i>
         </ul>
 
@@ -34,6 +36,10 @@
                 <td>{{ form.address.label_tag }}</td>
                 <td>{{ form.address }}</td>
             </tr>
+            <label for="coupon-input">Enter coupon</label>
+            <input type="text" id="coupon-input">
+            <p id="coupon-form-text"></p>
+
         </table>
 
         {% if form.errors or form.non_field_errors %}
@@ -46,56 +52,80 @@
         </div>
         {% endif %}
 
-        <a style="font-size: 15px; margin-left: 150px" id="total-price">Total price:</a>
+        <a style="font-size: 15px; margin-left: 150px">Total price: <span id="total-price"></span></a>
         <button class="btn btn-primary"
-                style="display: block; margin-left: auto; margin-right: auto; margin-top: 10px;">Buy
+            style="display: block; margin-left: auto; margin-right: auto; margin-top: 10px;">Buy
         </button>
     </form>
 </div>
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="{% static 'orders/js/coupons.js' %}"></script>
 <script>
-$(document).ready(function() {
-    var prodQuantity = parseInt('{{ prod.quantity }}');
 
-    // Function to update the total price based on quantity
-    function updateTotalPrice() {
-        var quantity = parseInt($('#id_quantity').val() || 1);
-        var price = parseFloat('{{ prod.price }}');
-        var totalPrice = quantity * price;
-        $('#total-price').text('Total price: ' + totalPrice.toFixed(2));
-    }
+    $(document).ready(function () {
+        var prodQuantity = parseInt('{{ prod.quantity }}');
+        const couponFormText = document.getElementById("coupon-form-text");
+        var discountPercent = 0;
 
-    // Call the function initially to set the initial total price
-    updateTotalPrice();
+        const coupons = new Map([
+            ["WWW", { percents: 50 }],
+            ["TTT", { percents: 20 }],
+            ["EEE", { percents: 10, expired: true }],
+        ]);
 
-    // Call the function whenever the quantity input value changes
-    $('#id_quantity').on('change', function() {
+        $('#coupon-input').on('change', function () {
+            var price = document.getElementById("total-price");
+            const coupon = this.value;
+            const discount = coupons.get(coupon);
+            if (!discount) {
+                couponFormText.textContent = "Coupon not found";
+                discountPercent = 0;
+                return;
+            }
+            if (discount.expired) {
+                couponFormText.textContent = "Coupon expired...";
+                discountPercent = 0;
+                return;
+            }      
+            discountPercent = discount.percents;
+            couponFormText.textContent = "Coupon applied!";
+            updateTotalPrice();
+        });
+
+        function updateTotalPrice() {
+            var quantity = parseInt($('#id_quantity').val() || 1);
+            var price = parseFloat('{{ prod.price }}');
+            var totalPrice = quantity * price;
+            totalPrice = totalPrice *(1 - discountPercent / 100);
+            $('#total-price').text(totalPrice.toFixed(2));
+        }
+
         updateTotalPrice();
+
+        $('#id_quantity').on('change', function () {
+            updateTotalPrice();
+            validateQuantity();
+        });
+   
+        $('#id_quantity').on('input', function () {
+            var quantity = parseInt($(this).val());
+            if (quantity < 0) {
+                $(this).val('');
+            } else if (quantity > prodQuantity) {
+                $(this).val(prodQuantity);
+            }
+        });
+
+        function validateQuantity() {
+            var quantity = parseInt($('#id_quantity').val());
+            if (quantity > prodQuantity) {
+                $('#id_quantity').val(prodQuantity);
+            }
+        }
+  
         validateQuantity();
     });
-
-    // Add validation to prevent entering negative numbers or exceeding prod.quantity
-    $('#id_quantity').on('input', function() {
-        var quantity = parseInt($(this).val());
-        if (quantity < 0) {
-            $(this).val('');
-        } else if (quantity > prodQuantity) {
-            $(this).val(prodQuantity);
-        }
-    });
-
-    // Function to validate the quantity when the page loads
-    function validateQuantity() {
-        var quantity = parseInt($('#id_quantity').val());
-        if (quantity > prodQuantity) {
-            $('#id_quantity').val(prodQuantity);
-        }
-    }
-
-    // Call the validation function initially
-    validateQuantity();
-});
 </script>
 
 {% endblock content %}

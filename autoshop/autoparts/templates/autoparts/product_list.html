@@ -21,42 +21,46 @@
         </div>
 
         <div class="content">
+
+
             <div class="product-list">
                 {% if product_types %}
+
 
                 {% for product_type in product_types %}
                 {% for product in product_type.products.all %}
 
-                <div class="product" itemscope itemtype="https://schema.org/Product">
-                    <a class="product-image" href="{{ product.get_absolute_url }}">
-                        <img src="{{ product.image.url }}" alt="product image" itemprop="image">
-                    </a>
+                <div class="container">
+                    <div class="product" itemscope itemtype="https://schema.org/Product">
+                        <a class="product-image" href="{{ product.get_absolute_url }}">
+                            <img src="{{ product.image.url }}" alt="product image" itemprop="image">
+                        </a>
 
-                    <div class="product-info">
-                        <h3>{{ product.name }}</h3>
-                        <div class="description">
-                            <p class="product-type"><span>Type: </span> {{ product.product_type.type }} </p>
-                            <p class="product-price"><span>Price: </span> {{ product.price }} </p>
+                        <div class="product-info">
+                            <h3 class="title">{{ product.name }}</h3>
+                            <p class="type">Type:  {{ product.product_type.type }} </p>
+                            <p class="price">Price:  {{ product.price }} </p>
+                            <div class="purchase">
+                                <a class="btn" href="{{ product.get_absolute_url }}"> BUY </a>
+                            </div>
                         </div>
-                        <a class="btn" href="{{ product.get_absolute_url }}"> BUY </a>
                     </div>
-
-
-
                 </div>
+                
+                {% endfor %}
+                {% endfor %}
 
-                {% endfor %}
-                {% endfor %}
 
                 {% else %}
                 <h1> There are no products </h1>
                 {% endif %}
-
             </div>
+
         </div>
 
     </div>
 </div>
 
+<script src="{% static 'autoparts/js/3dcards.js' %}"></script>
 
 {% endblock %}
